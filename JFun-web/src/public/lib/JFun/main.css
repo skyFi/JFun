@@ -121,6 +121,90 @@ html, body {
     font-size: 30px;
 }
 
+/*右侧点导航*/
+.pagination {
+    position: fixed;
+    right: 25px;
+    top: 50%;
+    z-index: 15;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.pagination li {
+    padding: 0;
+    text-align: center;
+}
+
+.pagination li span {
+    padding: 10px;
+    width: 4px;
+    height: 4px;
+    display: block;
+    cursor: pointer;
+}
+
+.pagination li span:before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #303030;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-transition: background 1s;
+    transition: background 1s;
+}
+
+.pagination li span.active:before {
+    width: 12px;
+    height: 12px;
+    background: #303030;
+    margin-top: -4px;
+    left: 6px;
+    -webkit-transition: background 1s;
+    transition: background 1s;
+}
+.viewing-index-1 .pagination li span:before, .viewing-index-2 .pagination li span:before, .viewing-index-3 .pagination li span:before, .viewing-index-4 .pagination li span:before, .viewing-index-5 .pagination li span:before{
+    background: #fff;
+}
+
+.viewing-index-1 .pagination li span.active:before, .viewing-index-2 .pagination li span.active:before, .viewing-index-3 .pagination li span.active:before, .viewing-index-4 .pagination li span.active:before, .viewing-index-5 .pagination li span.active:before{
+    background: #fff;
+}
+
+/*四周围白*/
+.frame-left {
+    position: fixed;
+    width: 10px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    z-index: 5;
+}
+
+.frame-right {
+    position: fixed;
+    width: 10px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: #fff;
+    z-index: 5;
+}
+
+.frame-bottom {
+    position: fixed;
+    height: 10px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    z-index: 5;
+}
+
 /*菜单*/
 .menu-open {
     position: fixed;
@@ -223,6 +307,8 @@ html, body {
 .navigation li span:focus {
     color: #999;
 }
+
+/*内容*/
 .slides {
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;

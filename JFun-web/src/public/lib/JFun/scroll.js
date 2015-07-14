@@ -7,6 +7,7 @@ var animationTime = 1000;
 var quietPeriod = 500;
 var lastAnimation;
 var is_responsive;
+var timer;
 
 $(document).ready(function() {
 
@@ -95,6 +96,16 @@ $(document).ready(function() {
     }
 
     $('.navigation span').on('click', function() {
+        if (timer) {
+            clearTimeout(timer);
+        }
+        $('.nav-wrapper').removeClass('open');
+        $('.nav-wrapper').addClass('close');
+
+        timer = setTimeout(function(){
+            $('.nav-wrapper').removeClass('close');
+        }, 500);
+
         if( !is_responsive && $(this).attr('data-index') != active_slide) {
             scrollToIndex($(this).attr('data-index'));
         }
