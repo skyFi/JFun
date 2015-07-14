@@ -1,0 +1,246 @@
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+::-moz-selection {
+    background: #000;
+    color: #fff;
+    text-shadow: none;
+}
+
+::selection {
+    background: #000;
+    color: #fff;
+    text-shadow: none;
+}
+
+a {
+    text-decoration: none;
+    position: relative;
+}
+
+a:active {
+    top: 2px;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+/*标题*/
+.title {
+    position: fixed;
+    padding: 60px;
+    background: #fff;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    -webkit-transition: all 0.3s 0.2s;
+    transition: all 0.3s 0.2s;
+}
+
+.logo {
+    background: url('./../image/kaibrueckers.svg');
+    background-size: cover;
+    cursor: pointer;
+    width: 130px;
+    height: 130px;
+    display: block;
+    text-indent: -9999px;
+    float: left;
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: all 0.3s 0.2s;
+    transition: all 0.3s 0.2s;
+}
+.title .logo:after, .title .logo:before {
+    content:"";
+    position:absolute;
+    display:block;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    height: 8px;
+    width: 4px;
+    background: #303030;
+    top: 50%;
+    -webkit-animation: blinkiblinki 6s 2.5s infinite linear alternate;
+    -moz-animation: blinkiblinki 6s 2.5s infinite linear alternate;
+    animation: blinkiblinki 6s 2.5s infinite linear alternate;
+}
+
+.viewing-index-1 .title .logo, .viewing-index-2 .title .logo, .viewing-index-3 .title .logo, .viewing-index-4 .title .logo, .viewing-index-5 .title .logo {
+    -webkit-transform: scale(0.71);
+    transform: scale(0.71);
+}
+.logo:before { left: 38%; }
+.logo:after { right: 38%; }
+
+.about {
+    float: left;
+    margin: 175px 0 0 30px;
+    -webkit-transition: all 0.45s 0.2s;
+    transition: all 0.45s 0.2s;
+}
+.viewing-index-1 .title .about,
+.viewing-index-2 .title .about,
+.viewing-index-3 .title .about,
+.viewing-index-4 .title .about,
+.viewing-index-5 .title .about {
+    margin: 35px 0 0 30px;
+}
+
+.about h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    color: #999;
+    font-size: 18px;
+}
+
+.about h2 {
+    font-family: 'Droid Sans', sans-serif;
+    font-weight: 700;
+    color: #303030;
+    font-size: 30px;
+}
+
+/*菜单*/
+.menu-open {
+    position: fixed;
+    background: url('./../image/menu-open.svg');
+    width: 65px;
+    height: 65px;
+    display: block;
+    right: 60px;
+    top: 60px;
+    cursor: pointer;
+    text-indent: -9999px;
+    z-index: 10;
+}
+
+.menu-close {
+    position: fixed;
+    background: url('./../image/menu-close.svg');
+    width: 65px;
+    height: 65px;
+    display: block;
+    right: 60px;
+    top: 60px;
+    cursor: pointer;
+    text-indent: -9999px;
+    z-index: 30;
+}
+
+.nav-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.95);
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: opacity 0.5s, visibility 0s 0.5s;
+    transition: opacity 0.5s, visibility 0s 0.5s;
+    z-index: 30;
+}
+
+.nav-wrapper.open {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+}
+
+.nav-wrapper.open .navigation {
+    opacity: 1;
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+}
+
+.nav-wrapper.close .navigation {
+    -webkit-transform: translateY(25%) rotateX(-35deg);
+    transform: translateY(25%) rotateX(-35deg);
+}
+
+.links {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    height: 60%;
+    font-size: 54px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -webkit-perspective: 1200px;
+    perspective: 1200px;
+}
+.navigation {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: inline-block;
+    height: 100%;
+    position: relative;
+    opacity: 0.4;
+    -webkit-transform: translateY(-25%) rotateX(35deg);
+    transform: translateY(-25%) rotateX(35deg);
+    -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.navigation li {
+    display: block;
+    height: 20%;
+    min-height: 54px;
+}
+
+.navigation li span {
+    font-family: 'Droid Sans', sans-serif;
+    font-weight: 700;
+    display: block;
+    color: #303030;
+    cursor: pointer;
+}
+
+.navigation li span:hover,
+.navigation li span:focus {
+    color: #999;
+}
+.slides {
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.start {
+    background: #f1f1f1;
+    padding: 364px 10px 10px 10px;
+}
+.slide {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+.slide-1 {
+    background: #a7dbd8;
+    padding: 210px 20px 20px 20px;
+}
